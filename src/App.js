@@ -30,10 +30,15 @@ class App extends React.Component {
                 header: "Projects",
                 copy: [
                     {
+                        id: 0,
+                        project_title: "Customer Payment UI Challenge",
+                        github: "https://github.com/rches/transaction_ui_exercise",
+                        description: `Create React App | SkeletonCSS | Given a blank slate, created a sortable, paginated UI for users to sort through dummy data.`
+                    },
+                    {
                         id: 1,
                         project_title: "WoW Classic News Scrapper",
-                        github:
-                            "https://github.com/rches/wowclassic-news-scraper",
+                        github: "https://github.com/rches/wowclassic-news-scraper",
                         description: `ApifySDK | NodeJS | MongoDB | React - A web scraping tool that parses online forum discussions to discover the latest news and rumors regarding a video game.`
                     },
                     {
@@ -77,8 +82,7 @@ class App extends React.Component {
                     },
                     {
                         id: 4,
-                        title:
-                            "Maryland State Top Finalist - Magic: the Gathering",
+                        title: "Maryland State Top Finalist - Magic: the Gathering",
                         date_range: "2008",
                         description: "http://old.starcitygames.com/decks/26973"
                     }
@@ -136,11 +140,7 @@ class App extends React.Component {
             const funList = this.state.copy.map(el => {
                 return (
                     <li key={el.id}>
-                        {el.description ? (
-                            <a href={el.description}>{el.title}</a>
-                        ) : (
-                            el.title
-                        )}
+                        {el.description ? <a href={el.description}>{el.title}</a> : el.title}
                         {" - "} {el.date_range}
                     </li>
                 );
@@ -167,19 +167,11 @@ class App extends React.Component {
                     <div className="container">
                         <div className="row">
                             <div className="one-half column part-a">
-                                <h1 className="hero-heading">
-                                    this is the start of something great
-                                </h1>
+                                <h1 className="hero-heading">this is the start of something great</h1>
                             </div>
                             <div className="one-half column part-b">
-                                <img
-                                    src={robheadshot}
-                                    alt="rob smiling"
-                                    className="hero-img"
-                                ></img>
-                                <h4 className="hero-description">
-                                    Rob Cheseldine - Software Dev
-                                </h4>
+                                <img src={robheadshot} alt="rob smiling" className="hero-img"></img>
+                                <h4 className="hero-description">Rob Cheseldine - Software Dev</h4>
                             </div>
                         </div>
                     </div>
@@ -192,34 +184,22 @@ class App extends React.Component {
                                 <nav className="nav">
                                     <ul>
                                         <li>
-                                            <button
-                                                value="home"
-                                                onClick={this.NavClick}
-                                            >
+                                            <button value="home" onClick={this.NavClick}>
                                                 Home
                                             </button>
                                         </li>
                                         <li>
-                                            <button
-                                                value="projects"
-                                                onClick={this.NavClick}
-                                            >
+                                            <button value="projects" onClick={this.NavClick}>
                                                 Projects
                                             </button>
                                         </li>
                                         <li>
-                                            <button
-                                                value="fun"
-                                                onClick={this.NavClick}
-                                            >
+                                            <button value="fun" onClick={this.NavClick}>
                                                 Fun Stuff
                                             </button>
                                         </li>
                                         <li>
-                                            <button
-                                                value="contact"
-                                                onClick={this.NavClick}
-                                            >
+                                            <button value="contact" onClick={this.NavClick}>
                                                 Contact
                                             </button>
                                         </li>
